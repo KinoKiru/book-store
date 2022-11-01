@@ -14,8 +14,13 @@ namespace BookStoreWeb.Models
         [Display(Name = "Naam")]
         public string Name { get; set; }
 
-
+        /// <summary>
+        /// {0} = display name,
+        /// {1} = minimum
+        /// {2} = maximum
+        /// </summary>
         [Display(Name = "Volgnummer")]
+        [Range(minimum: 1, maximum: 100, ErrorMessage = "{0} moet tussen {1} en {2} liggen")]
         public int DisplayOrder { get; set; }
 
         [Display(Name = "Aanmaakdatum")]

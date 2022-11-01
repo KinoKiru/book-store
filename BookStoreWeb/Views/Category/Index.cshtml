@@ -6,6 +6,10 @@
 
 <h1>Index</h1>
 
+@if (TempData["result"] != null) { 
+    <h2>@TempData["result"]</h2>
+}
+
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
@@ -47,9 +51,15 @@
                         @Html.DisplayFor(modelItem => item.CreatedDateTime)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <div class="btn-group w-75" role="group">
+                            <a class="btn btn-primary mx-2" asp-action="Edit" asp-route-id="@item.Id">
+                                <i class="bi bi-pencil-square"></i> Wijzig
+                            </a>
+                            <a class="btn btn-danger mx-2" asp-action="Delete" asp-route-id="@item.Id">
+                                <i class="bi bi-trash-fill"></i> Verwijder
+                            </a>
+                        </div>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> 
                     </td>
                 </tr>
             }
