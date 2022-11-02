@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let error = '@(TempData["error"] ?? "a")';
+    let result = '@(TempData["result"] ?? "a")';
+
+
+    if (result != 'a')
+    {
+
+        Swal.fire({
+            toast: true,
+            position: 'top-end',
+            icon: 'success',
+            title: `${result}`,
+            showConfirmButton: false,
+            timer: 1700
+        });
+
+}
+
+   if (error != 'a')
+{
+       Swal.fire({
+           toast: true,
+            position: 'top-end',
+            icon: 'error',
+            title: `${error}`,
+            showConfirmButton: false,
+            timer: 1700
+        });
+}
+
+</script>
+
+
+
