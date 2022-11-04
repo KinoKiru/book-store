@@ -1,4 +1,4 @@
-using BookStoreWeb.Data;
+using BookStore.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BookStoreConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BookStoreConnection"), b => b.MigrationsAssembly("BookStoreWeb")));
 
 var app = builder.Build();
 

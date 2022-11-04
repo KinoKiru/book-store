@@ -1,4 +1,5 @@
-﻿using BookStoreWeb.Models;
+﻿using BookStore.DataAccess;
+using BookStore.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreWeb.Controllers
@@ -6,13 +7,13 @@ namespace BookStoreWeb.Controllers
     public class CategoryController : Controller
     {
 
-        private Data.ApplicationDbContext _context { get; set; }
+        private ApplicationDbContext _context { get; set; }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="context"></param>
-        public CategoryController(Data.ApplicationDbContext context)
+        public CategoryController(ApplicationDbContext context)
         {
             _context = context;
         }
