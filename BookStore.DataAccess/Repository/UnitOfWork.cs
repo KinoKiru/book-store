@@ -5,6 +5,7 @@ namespace BookStore.DataAccess.Repository
     public class UnitOfWork : IUnitOfWork
     {
         public ICategoryRepository Category { get; private set; }
+        public ICoverTypeRepository CoverType { get; private set; }
         private readonly ApplicationDbContext _context;
 
         /// <summary>
@@ -15,6 +16,7 @@ namespace BookStore.DataAccess.Repository
         {
             _context = context;
             Category = new CategoryRepository(context);
+            CoverType = new CoverTypeRepository(context);
         }
 
 

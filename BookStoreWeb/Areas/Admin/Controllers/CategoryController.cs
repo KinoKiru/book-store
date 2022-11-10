@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookStoreWeb.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
 
